@@ -1,4 +1,4 @@
-# matching
+-# matching
 선생님-학생 매칭 서비스
 
 본 예제는 MSA/DDD/Event Storming/EDA 를 포괄하는 분석/설계/구현/운영 전단계를 커버하도록 구성한 예제입니다.
@@ -25,7 +25,10 @@
     - [Persistence Volume](#Persistence-Volume)
     - [Self_healing (liveness probe)](#Self_healing-(liveness-probe))
     - [무정지 재배포](#무정지-재배포)
-
+  - [신규MSA추가_학생포인트관리시스템](#신규MSA추가_학생포인트관리시스템)
+    - [신규서비스 분석설계](#신규서비스-분석설계)
+    - [신규서비스 구현](#신규서비스-구현)
+    - [운영과 Retirement](#운영과-Retirement)
 
 # 서비스 시나리오
 
@@ -803,3 +806,16 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 ![image](https://user-images.githubusercontent.com/75401933/105041119-f4e9d180-5aa5-11eb-9afb-e7af9c06fcce.png)
 
 배포기간 동안 Availability 가 변화없기 때문에 무정지 재배포가 성공한 것으로 확인됨.
+
+
+#신규MSA추가_학생포인트관리시스템
+
+## 신규서비스 분석설계
+
+### 변경된 이벤트스토밍
+
+### 헥사고날아키텍쳐의 변화
+
+## 신규서비스 구현
+
+## 운영과 Retirement
