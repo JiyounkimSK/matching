@@ -810,7 +810,13 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 
 
 
+
+
+
+
+
 # 신규MSA추가_학생포인트관리시스템
+
 
 
 ## 신규서비스 분석설계
@@ -821,8 +827,10 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 1. 방문이 취소되었을 경우 학생의 포인트를 100 차감한다.
 
 
+
 ### 변경된 이벤트스토밍
 ![변경된이벤트스토밍](https://user-images.githubusercontent.com/75401933/105131136-b26ad800-5b2b-11eb-9e2a-1918de08addc.png)
+
 
 
 ### 헥사고날아키텍쳐의 변화
@@ -830,8 +838,10 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 신규추가된 학생 포인트 관리시스템은 정책구독만 하며 event를 발행하지는 않는다.
 
 
+
 ## 신규서비스 구현
 기존 마이크로서비스에 수정을 발생시키지 않도록 req/res 방식이 아닌 event를 subscribe 하는 방식으로 구현하였다. 기존 운영중인 마이크로 서비스에는 student attribute를 신규추가한 것 외에 변경사항은 없으며, 기존 MSA의 아키텍처나 DB구조에 영향을 주지 않는다. 
+
 
 
 ## 운영과 Retirement
