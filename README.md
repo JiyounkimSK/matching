@@ -813,6 +813,8 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 ## 신규서비스 분석설계
 
 ### 변경된 이벤트스토밍
+![i변경된이벤트스토밍](https://user-images.githubusercontent.com/75401933/105131136-b26ad800-5b2b-11eb-9e2a-1918de08addc.png)
+
 
 ### 헥사고날아키텍쳐의 변화
 
