@@ -808,7 +808,10 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 배포기간 동안 Availability 가 변화없기 때문에 무정지 재배포가 성공한 것으로 확인됨.
 
 
+
+
 # 신규MSA추가_학생포인트관리시스템
+
 
 ## 신규서비스 분석설계
 선생님 방문을 요청하는 학생고객 관리를 위하여 학생 포인트 관리 기능을 추가하기로 하였다. 
