@@ -718,11 +718,12 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 
 - (payment) Payment.java (Entity)
 
-![image](https://user-images.githubusercontent.com/75401933/105285181-3a69e400-5bf7-11eb-8ae8-49637bd9051a.png)
+![image](https://user-images.githubusercontent.com/75401933/105285536-f3302300-5bf7-11eb-8227-9f43f68b6287.png)
 
 3. istio설정
 
 - virtualservice.yaml 생성
+
 ![image](https://user-images.githubusercontent.com/75401933/105285074-fe368380-5bf6-11eb-92f9-df8af52f1158.png)
 
 3. 부하테스터 siege 툴을 통한 서킷 브레이커 동작 확인:
@@ -760,6 +761,7 @@ kubectl exec -it pod/siege -- /bin/bash
 siege -c100 -t30S -v --content-type "application/json" 'http://52.231.52.214:8080/matches POST  {"id": 1000, "price":1000, "status": "matchRequest", "student":"testStudent"}'
 ```
 부하에 따라 visit pod의 cpu 사용률이 증가했고, Pod Replica 수가 증가하는 것을 확인할 수 있었음
+
 ![AutoScaling](https://user-images.githubusercontent.com/75401933/105278740-75651b00-5be9-11eb-9f06-11253eea34d6.png)
 
 ## Persistence Volume
@@ -788,6 +790,7 @@ kubectl get pod visit -o yaml
 mypage구현체의 deployment.yaml 소스 서비스포트를 8080이 아닌 고의로 8081로 변경하여 재배포한 후 pod 상태 확인
 
 - 정상/비정상 pod 정보 조회
+
 ![image](https://user-images.githubusercontent.com/75401933/105279506-08528500-5beb-11eb-89a0-346481020201.png)
 
 
@@ -808,11 +811,13 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 ```
 1. CI/CD를 통해 새로운 배포 시작
 1. seige 의 화면으로 넘어가서 Availability 가 100% 미만으로 떨어졌는지 확인
+
 ![availablity변화](https://user-images.githubusercontent.com/75401933/105281331-3f2a9a00-5bef-11eb-8961-d89c88147eb3.png)
 
 1. 배포기간중 Availability 가 평소 100%에서 70% 대로 떨어지는 것을 확인. 원인은 쿠버네티스가 성급하게 새로 올려진 서비스를 READY 상태로 인식하여 서비스 유입을 진행한 것이기 때문
 1. 이를 막기위해 Readiness Probe 를 재설정 후 CI/CD를 통해 새로운 배포 시작
-1. 동일한 시나리오로 재배포 한 후 Availability 확인:
+1. 동일한 시나리오로 재배포 한 후 Availability 확인
+
 ![image](https://user-images.githubusercontent.com/75401933/105281668-02ab6e00-5bf0-11eb-9dff-c277a96eacca.png)
 
 배포기간 동안 Availability 가 변화없기 때문에 무정지 재배포가 성공한 것으로 확인됨.
@@ -854,9 +859,11 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 
 ### 구현 테스트
 - 학생 jane에게 방문assign 시 student시스템에서 jane의 point가 100 증가
+
 ![image](https://user-images.githubusercontent.com/75401933/105269308-01217c00-5bd7-11eb-9eb3-611935cccc47.png)
 
 - jane이 방문 취소 시 point 100 차감
+
 ![image](https://user-images.githubusercontent.com/75401933/105269597-93298480-5bd7-11eb-815f-4d4173b96242.png)
 
 
