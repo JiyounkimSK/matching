@@ -711,7 +711,7 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 
 1. Hystrix 를 설정:  요청처리 쓰레드에서 처리시간이 600 밀리가 넘어서기 시작하여 어느정도 유지되면 CB 회로가 닫히도록 (요청을 빠르게 실패처리, 차단) 설정
 - application.yml
-<img width="766" alt="01 화면증적" src="https://user-images.githubusercontent.com/66051393/105108052-c64b1580-5afc-11eb-88a8-b37a01a87896.png">
+![Hystrix설정](https://user-images.githubusercontent.com/75401933/105256018-35417080-5bc8-11eb-9c55-dec189b1bed5.png)
 
 
 2. 피호출 서비스(결제:payment) 의 임의 부하 처리 - 400 밀리에서 증감 300 밀리 정도 왔다갔다 하게
