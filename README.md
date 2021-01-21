@@ -694,12 +694,11 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 ## CI/CD 설정
 각 구현체들은 각자의 source repository 에 구성되었고, 사용한 CI/CD 플랫폼은 Azure를 사용하였으며, pipeline build script 는 각 프로젝트 폴더 이하에 deployment.yml, service.yml 에 포함되었다
 
-<img width="678" alt="01 CI설정" src="https://user-images.githubusercontent.com/66051393/105039224-a4717480-5aa3-11eb-9d28-99fa5a809750.png">
+![CI파이프라인](https://user-images.githubusercontent.com/75401933/105256578-58205480-5bc9-11eb-89e6-490906ae1372.png)
 
-<img width="886" alt="02 CD설정" src="https://user-images.githubusercontent.com/66051393/105039282-b521ea80-5aa3-11eb-94c3-1ec50475300d.png">
+![CD릴리즈](https://user-images.githubusercontent.com/75401933/105256635-7a19d700-5bc9-11eb-87ab-0c3b6267a15c.png)
 
-<img width="647" alt="03 CD설정_상세" src="https://user-images.githubusercontent.com/66051393/105039330-c5d26080-5aa3-11eb-8b05-cabb28c6eaf1.png">
-
+![CD릴리즈스테이지](https://user-images.githubusercontent.com/75401933/105256710-a33a6780-5bc9-11eb-9bae-33a6965c17b1.png)
 
 
 ## 동기식 호출 / 서킷 브레이킹 / 장애격리
