@@ -717,14 +717,19 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 - (payment) Payment.java (Entity)
 ![Payment.java](https://user-images.githubusercontent.com/75401933/105256239-b3057c00-5bc8-11eb-8ac7-ced605b7d19f.png)
 
+3. istio설정
+- virtualservice.yaml 생성
+![virtualservice.yaml](https://user-images.githubusercontent.com/75401933/105273489-befc3880-5bde-11eb-995c-6a57a3ff1413.png)
+![image](https://user-images.githubusercontent.com/75401933/105269597-93298480-5bd7-11eb-815f-4d4173b96242.png)
 
 3. 부하테스터 siege 툴을 통한 서킷 브레이커 동작 확인:
  - 동시사용자 100명
  - 60초 동안 실시
+ 
 ```
  - siege -c100 -t60S -r5 -v --content-type "application/json" 'http://match:8080/matches POST {"id": 600, "price":1000, "status": "matchRequest"}' 
 ```
-<img width="635" alt="03 화면증적" src="https://user-images.githubusercontent.com/66051393/105108628-ffd05080-5afd-11eb-826d-66a7b252c09a.png">
+![siege](https://user-images.githubusercontent.com/75401933/105274031-bbb57c80-5bdf-11eb-8e24-b349b79a5f80.png)
 
 서킷브레이크가 발생하지 않아 아래와 같이 여러 조건으로 부하테스트를 진행하였으나, 500 에러를 발견할 수 없었음
 
