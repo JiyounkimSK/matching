@@ -783,6 +783,7 @@ kubectl get pod visit -o yaml
 ![PVC볼륨설정확인](https://user-images.githubusercontent.com/75401933/105261676-34faa280-5bd3-11eb-8a7c-aa27b73b95a7.png)
 
 • visit pod에 접속하여 mount 용량 확인
+
 ![image](https://user-images.githubusercontent.com/75401933/105268535-c3702380-5bd5-11eb-933e-a82b92e90f0b.png)
 
 
