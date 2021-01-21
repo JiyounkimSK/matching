@@ -718,7 +718,7 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 
 - (payment) Payment.java (Entity)
 
-![Payment.java](https://user-images.githubusercontent.com/75401933/105256239-b3057c00-5bc8-11eb-8ac7-ced605b7d19f.png)
+![image](https://user-images.githubusercontent.com/75401933/105285181-3a69e400-5bf7-11eb-8ae8-49637bd9051a.png)
 
 3. istio설정
 
