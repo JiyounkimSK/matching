@@ -798,6 +798,11 @@ mypage구현체의 deployment.yaml 소스 서비스포트를 8080이 아닌 고�
 
 먼저 무정지 재배포가 100% 되는 것인지 확인하기 위해서 Autoscaler 이나 CB 설정을 제거함
 seige 로 배포작업 직전에 워크로드를 모니터링 함.
+- match의 deployment.yml의 readiness설정 삭제 후 CI/CD를 통한 재배포
+![image](https://user-images.githubusercontent.com/75401933/105279725-8b73db00-5beb-11eb-91d8-5eb0f450a1f8.png)
+
+- 부하 측정을 siege로 진입하여 Availability 확인
+
 
 ```
 siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/matches POST {"id": "101"}'
