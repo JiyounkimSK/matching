@@ -723,10 +723,7 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 3. istio설정
 
 - virtualservice.yaml 생성
-
-![virtualservice.yaml](https://user-images.githubusercontent.com/75401933/105273489-befc3880-5bde-11eb-995c-6a57a3ff1413.png)
-
-![image](https://user-images.githubusercontent.com/75401933/105269597-93298480-5bd7-11eb-815f-4d4173b96242.png)
+![image](https://user-images.githubusercontent.com/75401933/105285074-fe368380-5bf6-11eb-92f9-df8af52f1158.png)
 
 3. 부하테스터 siege 툴을 통한 서킷 브레이커 동작 확인:
  - 동시사용자 100명
