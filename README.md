@@ -760,9 +760,8 @@ visit 컨테이너를 마이크로서비스로 배포하면서 영속성 있는 
 
 • PVC 설정 확인
 
-kubectl describe pvc azure-pvc
+![pvcDescribe](https://user-images.githubusercontent.com/75401933/105258282-be5aa680-5bcc-11eb-86c7-531f48900c57.png)
 
-<img width="546" alt="01-1 화면증적(decribe)" src="https://user-images.githubusercontent.com/66051393/105042326-73933e80-5aa7-11eb-8c4f-94b46c811e56.png">
 
 • PVC Volume설정 확인
 mypage 구현체에서 해당 pvc를 volumeMount 하여 사용 (kubectl get deployment mypage -o yaml)
