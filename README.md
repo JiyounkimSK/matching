@@ -842,6 +842,12 @@ siege -c10 -t30S -r10 --content-type "application/json" 'http://match:8080/match
 ## 신규서비스 구현
 기존 마이크로서비스에 수정을 발생시키지 않도록 req/res 방식이 아닌 event를 subscribe 하는 방식으로 구현하였다. 기존 운영중인 마이크로 서비스에는 student attribute를 신규추가한 것 외에 변경사항은 없으며, 기존 MSA의 아키텍처나 DB구조에 영향을 주지 않는다. 
 
+### 구현 테스트
+- 학생 jane에게 방문assign 시 student시스템에서 jane의 point가 100 증가
+![image](https://user-images.githubusercontent.com/75401933/105269308-01217c00-5bd7-11eb-9eb3-611935cccc47.png)
+
+- jane이 방문 취소 시 point 100 차감
+![image](https://user-images.githubusercontent.com/75401933/105269597-93298480-5bd7-11eb-815f-4d4173b96242.png)
 
 
 ## 운영과 Retirement
