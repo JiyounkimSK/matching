@@ -749,21 +749,21 @@ http localhost:8081/matches id=51 price=50000 status=matchRequest
 ## 오토스케일 아웃
 
 앞서 CB 는 시스템을 안정되게 운영할 수 있게 해줬지만 사용자의 요청을 100% 받아들여주지 못했기 때문에 이에 대한 보완책으로 자동화된 확장 기능을 적용하고자 한다.
+match구현체에 대한 replica 를 동적으로 늘려주도록 HPA 를 설정한다. 설정은 CPU 사용량이 10프로를 넘어서면 replica 를 10개까지 늘려준다:
 
-visit 구현체에 대한 replica 를 동적으로 늘려주도록 HPA 를 설정한다. 설정은 CPU 사용량이 10프로를 넘어서면 replica 를 10개까지 늘려준다:
+- autosclae 적용
 
-kubectl autoscale deploy visit --min=1 --max=10 --cpu-percent=15
+```
+kubectl autoscale deployment match --cpu-percent=10 --min=1 --max=10
+```
+![AutoScaling1](https://user-images.githubusercontent.com/75401933/105279069-279ce280-5bea-11eb-9efd-a1b310cfd75b.png)
 
-<img width="504" alt="01 화면증적" src="https://user-images.githubusercontent.com/66051393/105040263-f8308d80-5aa4-11eb-9686-0afedeaa5a48.png">
-
-
-kubectl exec -it pod siege -- /bin/bash
-siege -c20 -t120S -v http://visit:8080/visits/600
-
+```
+kubectl exec -it pod/siege -- /bin/bash
+siege -c100 -t30S -v --content-type "application/json" 'http://52.231.52.214:8080/matches POST  {"id": 1000, "price":1000, "status": "matchRequest", "student":"testStudent"}'
+```
 부하에 따라 visit pod의 cpu 사용률이 증가했고, Pod Replica 수가 증가하는 것을 확인할 수 있었음
-
-<img width="536" alt="02 화면증적" src="https://user-images.githubusercontent.com/66051393/105040477-3cbc2900-5aa5-11eb-94b8-7f2eb33102fa.png">
-
+![AutoScaling](https://user-images.githubusercontent.com/75401933/105278740-75651b00-5be9-11eb-9f06-11253eea34d6.png)
 
 ## Persistence Volume
 
