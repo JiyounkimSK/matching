@@ -764,10 +764,12 @@ visit 컨테이너를 마이크로서비스로 배포하면서 영속성 있는 
 
 
 • PVC Volume설정 확인
-mypage 구현체에서 해당 pvc를 volumeMount 하여 사용 (kubectl get deployment mypage -o yaml)
+visit 구현체에서 해당 pvc를 volumeMount 하여 사용 
 
-<img width="583" alt="02 화면증적" src="https://user-images.githubusercontent.com/66051393/105042760-f87e5800-5aa7-11eb-9447-2ecb7d427623.png">
-
+```
+kubectl get pod visit -o yaml
+```
+![PVC볼륨설정확인](https://user-images.githubusercontent.com/75401933/105261676-34faa280-5bd3-11eb-8a7c-aa27b73b95a7.png)
 • mypage pod에 접속하여 mount 용량 확인
 
 <img width="482" alt="03 mount_설정확인" src="https://user-images.githubusercontent.com/66051393/105042971-41361100-5aa8-11eb-8fa7-65efbe12fb8c.png">
