@@ -782,7 +782,7 @@ kubectl get pod visit -o yaml
 ```
 ![PVC볼륨설정확인](https://user-images.githubusercontent.com/75401933/105261676-34faa280-5bd3-11eb-8a7c-aa27b73b95a7.png)
 
-• visit pod에 접속하여 mount 용량 확인
+- visit pod에 접속하여 mount 용량 확인
 
 ![image](https://user-images.githubusercontent.com/75401933/105268535-c3702380-5bd5-11eb-933e-a82b92e90f0b.png)
 
@@ -790,13 +790,8 @@ kubectl get pod visit -o yaml
 ## Self_healing (liveness probe)
 mypage구현체의 deployment.yaml 소스 서비스포트를 8080이 아닌 고의로 8081로 변경하여 재배포한 후 pod 상태 확인
 
-• 정상 서비스포트 확인
-
-<img width="557" alt="01 증적자료" src="https://user-images.githubusercontent.com/66051393/105043345-c4effd80-5aa8-11eb-83db-df351905d102.png">
-
-• 비정상 상태의 pod 정보 확인
-
-<img width="581" alt="03 증적자료_POD비정상으로재기동" src="https://user-images.githubusercontent.com/66051393/105043596-0ed8e380-5aa9-11eb-9c46-dabe5736df9c.png">
+- 정상/비정상 pod 정보 조회
+![image](https://user-images.githubusercontent.com/75401933/105279506-08528500-5beb-11eb-89a0-346481020201.png)
 
 
 ## 무정지 재배포
